@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PostController::class, 'index']);
+Route::post('/confirm', [PostController::class, 'confirm']);
+Route::post('/thanks', [PostController::class, 'store']);
+Route::patch('/update', [PostController::class, 'update']);
+Route::delete('/delete', [PostController::class, 'destroy']);
