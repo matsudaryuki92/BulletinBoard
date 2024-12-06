@@ -1,1 +1,2 @@
-# BulletinBoard
+# 簡単掲示板
+<h2>環境</h2>
