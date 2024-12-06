@@ -32,8 +32,8 @@ class PostRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => '名前を入力してください',
-            'content.required' => '投稿内容を入力してください',
+            'name.required' => '※名前を入力してください',
+            'content.required' => '※投稿内容を入力してください',
         ];
     }
 }

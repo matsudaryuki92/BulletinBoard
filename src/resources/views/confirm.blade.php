@@ -15,7 +15,7 @@
             @csrf
             <div>
                 <label for="name">名前:</label>
-                <input type="text" name="name" id="name" value="{{ $posts['name'] }}" readonly>
+                <input type="hidden" name="name" id="name" value="{{ $posts['name'] }}" readonly>
             </div>
             <div>
                 <label for="content">投稿内容:</label><br>

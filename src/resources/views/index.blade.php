@@ -47,7 +47,8 @@
                     @method('PATCH')
                     <div>＠{{ $post['name'] }} at:{{ $post->created_at->format('Y-m-d H:i') }}</div>
                     <div><textarea name="content" id="content">{{ $post['content'] }}</textarea></div>
-                    <input type="hidden" name="id" value="{{ $post['id'] }}">                <button type="submit" class="button-form">更新</button>
+                    <input type="hidden" name="id" value="{{ $post['id'] }}">                
+                    <button type="submit" class="button-form">更新</button>
                 </form>
                 <form action="/delete" method="post">
                     @csrf
