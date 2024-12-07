@@ -44,4 +44,21 @@ class PostController extends Controller
         Post::find($request->id)->delete();
         return redirect('/');
     }
+
+    public function find()
+    {
+        return view('find', ['keyword'=>'']);
+    }
+
+    public function search(Request $request)
+    {
+        $posts = Post::where('name', 'LIKE', "%{$request->keyword}%")->get();
+        
+        $param = [
+            'keyword' => $request->keyword,
+            'posts' => $posts,
+        ];
+        
+        return view('find', $param);
+    }
 }

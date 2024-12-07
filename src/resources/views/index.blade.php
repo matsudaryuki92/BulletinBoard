@@ -36,6 +36,13 @@
         </form>
     </div>
     <div>
+        <form action="/find" method="get">
+            <!-- <input type="text" name="keyword"> -->
+             <label for="search">検索したい方はこちらをクリック</label>
+            <input type="submit" value="検索" id="search">
+        </form>
+    </div>
+    <div>
         <h3>投稿一覧</h3>
        @if($posts->isEmpty())
        <p>投稿がありません</p>
