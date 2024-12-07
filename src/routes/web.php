@@ -19,3 +19,5 @@ Route::post('/confirm', [PostController::class, 'confirm']);
 Route::post('/thanks', [PostController::class, 'store']);
 Route::patch('/update', [PostController::class, 'update']);
 Route::delete('/delete', [PostController::class, 'destroy']);
+Route::get('/find', [PostController::class, 'find']);
+Route::post('/search', [PostController::class, 'search']);
