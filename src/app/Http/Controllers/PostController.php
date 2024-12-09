@@ -17,14 +17,14 @@ class PostController extends Controller
 
     public function confirm(PostRequest $request)
     {
-        $posts = $request->only(['name', 'content']);
+        $posts = $request->only(['name', 'gender', 'content']);
 
         return view('confirm', compact('posts'));
     }
 
     public function store(PostRequest $request)
     {
-        $posts = $request->only(['name', 'content']);
+        $posts = $request->only(['name', 'gender', 'content']);
 
         Post::create($posts);
 

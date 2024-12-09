@@ -25,6 +25,7 @@ class PostRequest extends FormRequest
     {
         return [
             'name' => ['required'],
+            'gender' => ['required'],
             'content' => ['required'],
         ];
     }
@@ -33,6 +34,7 @@ class PostRequest extends FormRequest
     {
         return [
             'name.required' => '※名前を入力してください',
+            'gender.required' => '※性別を入力してください',
             'content.required' => '※投稿内容を入力してください',
         ];
     }

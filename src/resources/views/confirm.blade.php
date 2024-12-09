@@ -7,21 +7,35 @@
 </head>
 <body>
     <div>
-        <h2>簡単掲示板</h2>
+        <h2><a href="/">簡単掲示板</a></h2>
     </div>
     <div>
         <h3>投稿内容確認</h3>
         <form action="/thanks" method="post">
             @csrf
             <div>
-                <label for="name">名前:</label>
-                <input type="hidden" name="name" id="name" value="{{ $posts['name'] }}" readonly>
+                名前:
+                {{ session('name') }}
+                <input type="hidden" name="name" value="{{ $posts['name'] }}" >
             </div>
             <div>
-                <label for="content">投稿内容:</label><br>
-                <textarea name="content" id="content" readonly>{{ $posts['content'] }}</textarea>
+                性別:
+                @if (session('gender') == 0)
+                男性
+                @elseif (session('gender') == 1)
+                女性
+                @else
+                その他
+                @endif
+                <input type="hidden" name="gender" value="{{ $posts['gender'] }}">
             </div>
             <div>
+                投稿内容:
+                {{ session('content') }}
+                <input type="hidden" name="content" value="{{ $posts['content'] }}">
+            </div>
+            <div>
+                <a href="/"><button type="submit">編集</button></a>
                 <input type="submit" value="投稿">
             </div>
         </form>
