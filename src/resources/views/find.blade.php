@@ -28,6 +28,16 @@
                 ＠{{ $post->name }} at:{{ $post->created_at->format('Y-m-d H:i') }}
             </div>
             <div>
+                性別:
+                @if ($posts['gender'] == 0)
+                男性
+                @elseif ($posts['gender'] == 1)
+                女性
+                @else
+                その他
+                @endif
+            </div>
+            <div>
                 :{{ $post->content }}
             </div>
         </div>

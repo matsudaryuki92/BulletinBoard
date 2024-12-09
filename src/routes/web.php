@@ -14,10 +14,18 @@ use App\Http\Controllers\PostController;
 |
 */
 
+//indexぺージ
 Route::get('/', [PostController::class, 'index']);
+
+//confirmぺージ
 Route::post('/confirm', [PostController::class, 'confirm']);
+
+//thanksページ
 Route::post('/thanks', [PostController::class, 'store']);
+
 Route::patch('/update', [PostController::class, 'update']);
 Route::delete('/delete', [PostController::class, 'destroy']);
 Route::get('/find', [PostController::class, 'find']);
 Route::post('/search', [PostController::class, 'search']);
+
+//authの実装
