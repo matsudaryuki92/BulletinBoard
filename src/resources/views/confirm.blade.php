@@ -11,12 +11,12 @@
     </div>
     <div>
         <h3>投稿内容確認</h3>
-        <form action="/thanks" method="post">
+        <form action="/confirm" method="post">
             @csrf
             <div>
                 名前:
                 {{ session('name') }}
-                <input type="hidden" name="name" value="{{ $posts['name'] }}" >
+                <input type="hidden" name="name" value="{{ session('name') }}" >
             </div>
             <div>
                 性別:
@@ -27,18 +27,24 @@
                 @else
                 その他
                 @endif
-                <input type="hidden" name="gender" value="{{ $posts['gender'] }}">
+                <input type="hidden" name="gender" value="{{ session('gender') }}">
             </div>
             <div>
                 投稿内容:
                 {{ session('content') }}
-                <input type="hidden" name="content" value="{{ $posts['content'] }}">
+                <input type="hidden" name="content" value="{{ session('content') }}">
             </div>
-            <div>
-                <a href="/"><button type="submit">編集</button></a>
-                <input type="submit" value="投稿">
-            </div>
+            <input type="submit" value="投稿">
         </form>
-    </div>
+            <div>
+                <form action="/confirm/fix" method="post">
+                    @csrf
+                    <input type="hidden" name="name" value="{{ session('name') }}" >
+                    <input type="hidden" name="gender" value="{{ session('gender') }}" >
+                    <input type="hidden" name="content" value="{{ session('content') }}" >
+                    <input type="submit" value="編集">
+                </form>                    
+            </div>       
+        </div>
 </body>
 </html>

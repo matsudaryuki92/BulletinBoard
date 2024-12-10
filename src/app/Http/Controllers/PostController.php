@@ -10,16 +10,22 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::simplepaginate(4);
+        $posts = Post::paginate(6);
 
         return view('index', compact('posts'));
     }
 
-    public function confirm(PostRequest $request)
+    public function check(PostRequest $request)
     {
         $posts = $request->only(['name', 'gender', 'content']);
+        session()->put($posts);
 
-        return view('confirm', compact('posts'));
+        return redirect('/confirm');
+    }
+
+    public function confirm()
+    {
+        return view('confirm');
     }
 
     public function store(PostRequest $request)
@@ -27,8 +33,21 @@ class PostController extends Controller
         $posts = $request->only(['name', 'gender', 'content']);
 
         Post::create($posts);
+        session()->forget($posts);
 
-        return redirect('/');
+        return redirect('/thanks');
+    }
+
+    public function fix(PostRequest $request)
+    {
+        $posts = $request->only(['name', 'gender', 'content']);
+
+        return redirect('/')->with(compact('posts'));
+    }
+
+    public function thanks()
+    {
+        return view('thanks');
     }
 
     public function update(Request $request)

@@ -29,9 +29,9 @@
             </div>
             <div>
                 性別:
-                @if ($posts['gender'] == 0)
+                @if ($post['gender'] == 0)
                 男性
-                @elseif ($posts['gender'] == 1)
+                @elseif ($post['gender'] == 1)
                 女性
                 @else
                 その他
@@ -47,5 +47,6 @@
             <p>該当する投稿はありません</p> 
         @endif
     @endif
+    <button type="submit"><a href="/">HOME</a></button>
 </body>
 </html>
