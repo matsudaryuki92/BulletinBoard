@@ -7,15 +7,13 @@
 </head>
 <body>
     <div>
-        <h2><a href="/">簡単掲示板</a></h2>
+        <h2>簡単掲示板</h2>
     </div>
     <div>
-        <h3>投稿内容確認</h3>
-        <form action="/thanks" method="post">
-            @csrf
+        <h3>Thank you !!</h3>
             <p>投稿出来ました！</p>
             <div>
-                <input type="submit" value="戻る">
+                <button><a href="/">HOME</a></button>
             </div>
         </form>
     </div>

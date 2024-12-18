@@ -5,30 +5,52 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
+use App\Models\Category;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::simplepaginate(4);
+        //リレーションのデータをDBに突っ込んだところまでOK
+        $posts = Category::all();
+        $posts = Post::paginate(6);
 
         return view('index', compact('posts'));
     }
 
-    public function confirm(PostRequest $request)
+    public function check(PostRequest $request)
     {
-        $posts = $request->only(['name', 'gender', 'content']);
+        $posts = $request->only(['name', 'gender', 'category_id', 'content']);
+        session()->put($posts);
 
-        return view('confirm', compact('posts'));
+        return redirect('/confirm');
+    }
+
+    public function confirm()
+    {
+        return view('confirm');
     }
 
     public function store(PostRequest $request)
     {
-        $posts = $request->only(['name', 'gender', 'content']);
+        $posts = $request->only(['name', 'gender', 'category_id', 'content']);
 
         Post::create($posts);
+        session()->forget($posts);
 
-        return redirect('/');
+        return redirect('/thanks');
+    }
+
+    public function fix(PostRequest $request)
+    {
+        $posts = $request->only(['name', 'gender', 'category_id', 'content']);
+
+        return redirect('/')->with(compact('posts'));
+    }
+
+    public function thanks()
+    {
+        return view('thanks');
     }
 
     public function update(Request $request)

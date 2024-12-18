@@ -16,12 +16,14 @@ use App\Http\Controllers\PostController;
 
 //indexぺージ
 Route::get('/', [PostController::class, 'index']);
-
+Route::post('/', [PostController::class, 'check']);
 //confirmぺージ
-Route::post('/confirm', [PostController::class, 'confirm']);
+Route::get('/confirm', [PostController::class, 'confirm']);
+Route::post('/confirm', [PostController::class, 'store']);
+Route::post('/confirm/fix', [PostController::class, 'fix']);
 
 //thanksページ
-Route::post('/thanks', [PostController::class, 'store']);
+Route::get('/thanks', [PostController::class, 'thanks']);
 
 Route::patch('/update', [PostController::class, 'update']);
 Route::delete('/delete', [PostController::class, 'destroy']);
