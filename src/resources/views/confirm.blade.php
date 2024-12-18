@@ -30,6 +30,17 @@
                 <input type="hidden" name="gender" value="{{ session('gender') }}">
             </div>
             <div>
+                カテゴリ:
+                @if (session('category_id') == 1)
+                comedy
+                @elseif (session('category_id') == 2)
+                food
+                @else
+                economy
+                @endif
+                <input type="hidden" name="category_id" value="{{ session('category_id') }}">
+            </div>
+            <div>
                 投稿内容:
                 {{ session('content') }}
                 <input type="hidden" name="content" value="{{ session('content') }}">
@@ -41,6 +52,7 @@
                     @csrf
                     <input type="hidden" name="name" value="{{ session('name') }}" >
                     <input type="hidden" name="gender" value="{{ session('gender') }}" >
+                    <input type="text">
                     <input type="hidden" name="content" value="{{ session('content') }}" >
                     <input type="submit" value="編集">
                 </form>                    

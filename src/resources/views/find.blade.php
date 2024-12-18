@@ -37,6 +37,14 @@
                 その他
                 @endif
             </div>
+                カテゴリ:
+                @if ($post['category_id'] == 1)
+                comedy
+                @elseif ($post['category_id'] == 2)
+                food
+                @else
+                economy
+                @endif
             <div>
                 :{{ $post->content }}
             </div>

@@ -35,6 +35,21 @@
                 {{ $message }}
                 @enderror
             </div>
+            <!-- カテゴリの選択機能 -->
+            <div>
+                <label for="category_select">カテゴリ:</label>
+                <select name="category_id" id="category_select">
+                    <option value="" disabled selected style="display:none;">選択してください</option>
+                    <option value="1">comedey</option>
+                    <option value="2">food</option>
+                    <option value="3">economy</option>
+                </select>
+            </div>
+            <div>
+                @error('category_id')
+                {{ $message }}
+                @enderror
+            </div>
             <div>
                 <label for="content">投稿内容</label><br>
                 <textarea name="content" id="content" value="{{ session('posts')['content'] ?? old('content') }}">{{ session('posts')['content'] ?? old('content') }}</textarea>
@@ -75,6 +90,16 @@
                             女性
                         @else
                             その他
+                        @endif
+                    </div>
+                     <div>
+                        カテゴリ:
+                         @if ($post['category_id'] == 1)
+                            Comedy
+                        @elseif ($post['category_id'] == 2)
+                            food
+                        @else
+                            economy
                         @endif
                     </div>
                     <div><textarea name="content" id="content">{{ $post['content'] }}</textarea></div>
