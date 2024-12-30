@@ -7,7 +7,7 @@
 </head>
 <body>
     <div>
-        <a href="/"><h2>簡単掲示板</h2></a>
+        <a href="/admin"><h2>簡単掲示板</h2></a>
     </div>
     <div>
         <h3>検索画面</h3>
@@ -55,6 +55,6 @@
             <p>該当する投稿はありません</p> 
         @endif
     @endif
-    <button type="submit"><a href="/">HOME</a></button>
+    <button type="submit"><a href="/admin">HOME</a></button>
 </body>
 </html>

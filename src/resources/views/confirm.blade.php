@@ -7,7 +7,7 @@
 </head>
 <body>
     <div>
-        <h2><a href="/">簡単掲示板</a></h2>
+        <h2>簡単掲示板</h2>
     </div>
     <div>
         <h3>投稿内容確認</h3>
@@ -52,7 +52,7 @@
                     @csrf
                     <input type="hidden" name="name" value="{{ session('name') }}" >
                     <input type="hidden" name="gender" value="{{ session('gender') }}" >
-                    <input type="text">
+                    <input type="hidden" name="category_id" value="{{ session('category_id') }}">
                     <input type="hidden" name="content" value="{{ session('content') }}" >
                     <input type="submit" value="編集">
                 </form>                    
