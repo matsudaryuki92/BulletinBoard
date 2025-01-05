@@ -1,0 +1,59 @@
+.post__name {
+  border:0;
+  padding:10px;
+  font-size:1em;
+  font-family:Arial, sans-serif;
+  color:#aaa;
+  border:solid 1px #ccc;
+  margin:0 0 20px;
+  width:300px;
+  margin: 20px auto;
+}
+
+.post__gender {
+  border:0;
+  padding:10px;
+  font-size:1em;
+  font-family:Arial, sans-serif;
+  color:#aaa;
+  border:solid 1px #ccc;
+  margin:0 0 20px;
+  width:300px;
+  margin: 20px auto;
+}
+
+.post__category {
+  border:0;
+  padding:10px;
+  font-size:1em;
+  font-family:Arial, sans-serif;
+  color:#aaa;
+  border:solid 1px #ccc;
+  margin:0 0 20px;
+  width:300px;
+  margin: 20px auto;
+}
+
+.post__content {
+  border:0;
+  padding:10px;
+  font-size:1em;
+  font-family:Arial, sans-serif;
+  color:#aaa;
+  border:solid 1px #ccc;
+  margin:0 0 20px;
+  width:300px;
+  margin: 20px auto;
+}
+
+.post__button {
+    display: block; 
+    margin: 0 auto; 
+    padding: 10px 20px; 
+    background-color: #ccc; 
+    color: #000; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    text-align: center; 
+}

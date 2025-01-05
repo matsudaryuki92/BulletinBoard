@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\AuthRequest;
+use Illuminate\Pagination\Paginator;
 use App\Models\Post;
 use App\Models\Category;
 
@@ -40,7 +41,7 @@ class AuthController extends Controller
 
     public function find()
     {
-        return view('find', ['keyword'=>'']);
+        return view('auth/find', ['keyword'=>'']);
     }
 
     public function search(Request $request)
@@ -52,6 +53,6 @@ class AuthController extends Controller
             'posts' => $posts,
         ];
         
-        return view('find', $param);
+        return view('auth/find', $param);
     }
 }
