@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>簡単掲示板</title>
-</head>
-<body>
-    <div>
-        <h2>簡単掲示板</h2>
-    </div>
+@extends('layouts.app')
+
+@section('css')
+
+@endsection
+
+@section('content')
     <div>
         <h3>投稿内容確認</h3>
         <form action="/confirm" method="post">
@@ -58,5 +54,4 @@
                 </form>                    
             </div>       
         </div>
-</body>
-</html>
+@endsection

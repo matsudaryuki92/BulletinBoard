@@ -1,25 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>簡単掲示板</title>
-</head>
-<body>
-    <h2>簡単掲示板</h2>
+@extends('layouts.auth')
+
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+@endsection
+
+@section('title')
+<div>
+    <div>
+        <h2>簡単掲示板</h2>
+    </div>
+</div>
+@endsection
+
+@section('content')
+<div class="container">
+    <div>
+        <form action="/find" method="get">
+            <!-- <input type="text" name="keyword"> -->
+             <button type="submit" id="search" class="post__admin--btn">検索</button>
+        </form>
+    </div>
     <div>
         <form action="/logout" method="post">
             @csrf
-            <input type="submit" id="logout" value="ログアウト">
+            <button class="post__admin--btn">ログアウト</button>
         </form>
     </div>
-     <div>
-        <form action="/find" method="get">
-            <!-- <input type="text" name="keyword"> -->
-             <label for="search">検索したい方はこちらをクリック</label>
-            <input type="submit" value="検索" id="search">
-        </form>
-    </div>
+</div>
     <div>
         <h3>投稿一覧</h3>
        @if($posts->isEmpty())
@@ -65,6 +72,5 @@
             @endforeach
         @endif
     </div>
-    {{ $posts->links() }}
-</body>
-</html>
+        {{ $posts->links() }}
+@endsection

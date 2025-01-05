@@ -1,0 +1,45 @@
+.container {
+    display: flex; /* Flexboxを利用して横並びにする */
+    justify-content: center; /* ボタン全体を中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    gap: 10px; /* ボタン間のスペース */
+}
+
+.post__admin--btn {
+    padding: 5px 10px; 
+    background-color: #ccc; /* 背景色 */
+    color: #000; /* テキストの色 */
+    border: none; /* ボーダーなし */
+    border-radius: 5px; /* 角を丸くする */
+    cursor: pointer; /* ホバー時のポインター表示 */
+    font-size: 15px; /* 文字サイズ */
+    text-align: center; /* テキストを中央揃え */
+    transition: background-color 0.3s ease; /* 背景色変化のアニメーション */
+}
+
+.post__admin--btn:hover {
+    background-color: #0056b3; /* ホバー時の背景色 */
+}
+
+.pagination li {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 5px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+}
+
+.pagination .active {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+
+.pagination .disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

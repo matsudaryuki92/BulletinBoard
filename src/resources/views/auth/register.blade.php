@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>簡単掲示板</title>
-</head>
-<body>
-    <h2>簡単掲示板：新規登録</h2>
+@extends('layouts.auth')
 
+@section('css')
+
+@endsection
+
+@section('title')
+    <h2>簡単掲示板：新規登録</h2>
+@endsection
+
+@section('content')
     <div>
         <form action="/register" method="post">
             @csrf
@@ -56,5 +57,4 @@
             </form>
         </div>
     </div>
-</body>
-</html>
+@endsection
