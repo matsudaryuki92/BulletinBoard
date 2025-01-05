@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-<div class="container">
+<div>
     <div>
         <h2>簡単掲示板</h2>
     </div>
@@ -14,17 +14,16 @@
 
 @section('content')
 <div class="container">
-    <div class="top__head--button">
-        <form action="/logout" method="post">
-            @csrf
-            <input type="submit" id="logout" value="ログアウト">
-        </form>
-    </div>
-     <div>
+    <div>
         <form action="/find" method="get">
             <!-- <input type="text" name="keyword"> -->
-             <label for="search">検索したい方はこちらをクリック</label>
-             <button type="submit" id="search" class="btn-gradient-radius">検索</button>
+             <button type="submit" id="search" class="post__admin--btn">検索</button>
+        </form>
+    </div>
+    <div>
+        <form action="/logout" method="post">
+            @csrf
+            <button class="post__admin--btn">ログアウト</button>
         </form>
     </div>
 </div>
