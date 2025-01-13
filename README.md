@@ -11,9 +11,9 @@
   <li>docker-compose exec php bash</li>
   <li>composer install</li>
   <li>.env.exampleファイルから.envを作成し、環境変数を変更</li>
-  DB_DATABASE=laravel_db
-  DB_USERNAME=laravel_user
-  DB_PASSWORD=laravel_pass
+  DB_DATABASE=laravel_db<br>
+  DB_USERNAME=laravel_user<br>
+  DB_PASSWORD=laravel_pass<br>
   <li>php artisan key:generate</li>
   <li>php artisan migrate</li>
   <li>php artisan db:seed</li>
